@@ -31,16 +31,16 @@ there is two datasets used in the model orders and iphone dataset,
 orders dataset:
  containing details of the customer order including:
 
-order_date : "01/01/20"
-order_number : 1
-order_email : example@rasa.com
-order_mobile : 01066301431
-brand : Apple
-model : iPhone 7 Plus
-colors : Jet Black
-capacity : 256GB
-payment : 900 
-status : returning
+- order_date : "01/01/20"
+- order_number : 1
+- order_email : example@rasa.com
+- order_mobile : 01066301431
+- brand : Apple
+- model : iPhone 7 Plus
+- colors : Jet Black
+- capacity : 256GB
+- payment : 900 
+- status : returning
 
 
 
@@ -53,17 +53,17 @@ MongoDB Document overview of orders collections:
 iphone dataset:
 containing details the iphone mobile stock available and mobile specifications:
 
-brand : Apple
-model : iPhone13ProMax
-announced : 2021september
-size_height_width_deth : 160.8x78.1x7.65mm
-weight_g : 240grams
-colors : SierraBlue
-capacity : 128GB
-ram : 6GB
-approx_price_USD : 1099
-img_url :"https://freephonestores.com/wp-content/uploads/2021/09/iphone-13-pro-family-hero.png"
-stock : 5
+- brand : Apple
+- model : iPhone13ProMax
+- announced : 2021september
+- size_height_width_deth : 160.8x78.1x7.65mm
+- weight_g : 240grams
+- colors : SierraBlue
+- capacity : 128GB
+- ram : 6GB
+- approx_price_USD : 1099
+- img_url :"https://freephonestores.com/wp-content/uploads/2021/09/iphone-13-pro-family-hero.png"
+- stock : 5
 
 MongoDB Document overview of iphone collections:
 
