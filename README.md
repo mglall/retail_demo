@@ -6,15 +6,16 @@ I built this model using  FastAPI for the back end server,rasa for front end cli
 
 #Things you can ask the bot:
 
-         1.Check the status of an order
+       1.Check the status of an order
        2.Return an item
        3.Cancel an item
        4.check Stock availability for iphone mobile
        5.Subscribe to product updates
-	6.check the colors available for certain iphone model
-	7.check the internal memory availability for certain iphone model
+       6.check the colors available for certain iphone model
+       7.check the internal memory availability for certain iphone model
 	
 Overview of the files:
+
 data/stories.yml- contains stories
 data/nlu.yml -  contains NLU training data
 data/rules.yml -  contains the rules upon which the bot responds to queries
