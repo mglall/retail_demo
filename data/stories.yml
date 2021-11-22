@@ -1,0 +1,41 @@
+version: "2.0"
+stories:
+
+- story: intro
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: request my name
+  steps:
+  - intent: whats_your_name
+  - action: utter_request_name
+  
+
+
+- story: order phone
+  steps:
+  - intent: order_phone
+  - action: utter_order_phone
+
+
+- story: asking colors
+  steps:
+  - intent: what_colors
+  - action: action_colors_available
+  
+
+- story: asking for capacity
+  steps:
+  - intent: what_capacity
+  - action: action_capacity_available
+  
+
+
+
+
+  
+
+
+
+  

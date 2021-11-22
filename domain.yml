@@ -1,0 +1,237 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+- inform:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- greet:
+    use_entities: true
+- faq:
+    use_entities: true
+- chitchat:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- whats_your_name:
+    use_entities: true
+- order_status:
+    use_entities: true
+- order_cancel:
+    use_entities: true
+- return:
+    use_entities: true
+- product_updates:
+    use_entities: true
+- product_stock:
+    use_entities: true
+- order_phone:
+    use_entities: true
+- what_colors:
+    use_entities: true
+- what_capacity:
+    use_entities: true
+
+entities:
+- email
+- negation
+- model
+- capacity
+- colors
+
+slots:
+  email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  verified_email:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  open_feedback:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  rating:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  model:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  capacity:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  colors:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  
+responses:
+  utter_greet:
+  - buttons:
+    - payload: order_status
+      title: Check status of my order
+    - payload: return
+      title: Start a return
+    - payload: order_cancel
+      title: Start cancelation
+    - payload: product_stock
+      title: Check inventory
+    - payload: product_updates
+      title: Subscribe to product updates
+    text: Hi there! I'm a demo bot from Rasa to help you with ordering mobile phone. How can I help you?
+  utter_default:
+  - text: I don't think I understand. Can you try providing more detail?
+  - text: um, what did you just say to me?
+  - text: beep, boop, don't understand
+  utter_faq/alternate_info:
+  - text: Currenty we can only provide order information based on email.
+  utter_faq/payment_methods:
+  - text: We accept all major credit cards, Apple Pay, Google Pay, and PayPal.
+  utter_faq/promotions:
+  - text: Currently, we're running a 15% sale!
+  utter_chitchat/thanks:
+  - text: No problem!
+  - text: I have no choice but to help you.
+  - text: I try my best
+  utter_chitchat/confirm_presence:
+  - text: yep I'm here.
+  - text: unfortunately, I'm still listening.
+  utter_chitchat/capabilities:
+  - text: I can help you start a return, subscribe to our emails, and even see if we have your desired phone.
+  utter_chitchat/mood_great:
+  - text: Superb!
+  - text: right on
+  utter_chitchat/mood_unhappy:
+  - text: sorry to hear that :(
+  - text: ok can you be nice to me
+  utter_chitchat/bot_challenge:
+  - text: I'm a bot, built using Rasa!
+  utter_chitchat/goodbye:
+  - text: bye bye
+  utter_request_name:
+  - text: You can call me whatever you want. I'm hear to serve you
+  utter_ask_order_status_form_email:
+  - text: I can help you find the status of your order. What's your email address so I can find the order?
+  utter_order_status:
+  - text: Based on the latest order from {email}, it looks like your order is currently {status}.
+  utter_confirm_email:
+  - text: I already have your email on file. Would you like me to look up your order under {email}?
+  utter_no_order:
+  - text: Hmm, seems like we don't have an order associated with that email
+  utter_ask_survey_form_rating:
+  - buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+    text: On a scale of 1-5, how would you rate your conversation today?
+  utter_open_feedback:
+  - text: Is there any other feedback you can provide?
+  utter_survey_end:
+  - text: Thank you for the feedback!
+  utter_start_over:
+  - text: Ok, let's start over.
+  utter_ask_cancel_form:
+  - text: Sorry to hear you want to cancel! To help find your order, can you please provide your email address?
+  utter_order_cancel_finish:
+  - text: Ok, I've cancelled the order for {email}. If you'd like to reorder, please visit your recent orders in your account history.
+  utter_ask_return_form:
+  - text: Let's start that return. To help find your order, can you please provide your email address?
+  utter_return_finish:
+  - text: Ok, I've kicked off your return. You should be receiving a return label in your inbox. Please send it in the next 14 days!
+  utter_ask_product_updates_form:
+  - text: I can keep you up to date with our weekly email about product updates! If you'd like to be added to the list, please provide your email address.
+  utter_product_updates_finish:
+  - text: Alright, you're subscribed!
+  utter_product_stock_start:
+  - text: i can help you find your preferred iphone !
+  utter_ask_product_stock_form_model:
+  - text: What model you looking for?
+  utter_ask_product_stock_form_capacity:
+  - text: How much phone storage do you need??
+  utter_ask_product_stock_form_colors:
+  - text: What color do you prefer your phone?
+  utter_in_stock:
+  - text: Looks like we have your {model} with {capacity} storage {colors} iphone in stock!
+  utter_no_stock:
+  - text: Sorry, seems like we don't have this product as of now.
+  utter_order_phone:
+  - text: Sorry, I can't actually help you order the iphone. Please visit our site to buy some nice phone! I can help you check inventory, see the status of an order or even make a change to that order.
+  utter_colors_available:
+  - text: the available colors is.
+  
+actions:
+- action_order_status
+- action_survey_submit
+- action_cancel_order
+- action_return
+- action_product_search
+- action_capacity_available
+- action_colors_available
+forms:
+  order_status_form:
+    required_slots:
+      email:
+      - entity: email
+        type: from_entity
+      - intent:
+        - inform
+        type: from_text
+  survey_form:
+    required_slots:
+      open_feedback:
+      - type: from_text
+      rating:
+      - entity: number
+        type: from_entity
+  cancel_form:
+    required_slots:
+      email:
+      - entity: email
+        type: from_entity
+  return_form:
+    required_slots:
+      email:
+      - entity: email
+        not_intent: product_updates
+        type: from_entity
+  product_updates_form:
+    required_slots:
+      email:
+      - entity: email
+        type: from_entity
+  product_stock_form:
+    required_slots:
+      model:
+      - entity: model
+        type: from_entity
+      capacity:
+      - entity: capacity
+        type: from_entity
+      colors:
+      - entity: colors
+        type: from_entity
+e2e_actions: []
