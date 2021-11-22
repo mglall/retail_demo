@@ -16,13 +16,13 @@ I built this model using  FastAPI for the back end server,rasa for front end cli
 	
 # Overview of the files:
 
-data/stories.yml- contains stories
-data/nlu.yml -  contains NLU training data
-data/rules.yml -  contains the rules upon which the bot responds to queries
-actions/actions.py -  contains custom action/api code
-domain.yml -  the domain file, including bot response templates
-config.yml -  training configurations for the NLU pipeline and policy ensemble
-tests/test_stories.yml -  end-to-end test stories
+- data/stories.yml- contains stories
+- data/nlu.yml -  contains NLU training data
+- data/rules.yml -  contains the rules upon which the bot responds to queries
+- actions/actions.py -  contains custom action/api code
+- domain.yml -  the domain file, including bot response templates
+- config.yml -  training configurations for the NLU pipeline and policy ensemble
+- tests/test_stories.yml -  end-to-end test stories
 
 # overview of the dataset used:
 
