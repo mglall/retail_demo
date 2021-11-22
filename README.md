@@ -4,7 +4,7 @@ repository : https://github.com/RasaHQ/retail-demo
 
 I built this model using  FastAPI for the back end server,rasa for front end client,and MongoDB Atlas for the back end database server.
 
-Things you can ask the bot:
+#Things you can ask the bot:
 
          1.Check the status of an order
        2.Return an item
