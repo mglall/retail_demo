@@ -29,13 +29,23 @@ stories:
   steps:
   - intent: what_capacity
   - action: action_capacity_available
-  
-
-
 
 
   
+- story: Interruption in product stock form
+  steps:
+  - intent: product_stock
+  - action: product_stock_form
+  - active_loop: product_stock_form
+  - intent: what_colors
+  - action: action_colors_available
+  - action: product_stock_form
+  - active_loop: product_stock_form
+ 
 
+
+
+  
 
 
   

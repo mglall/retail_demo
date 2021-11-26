@@ -7,7 +7,6 @@ from rasa_sdk.events import BotUttered
 import requests
 import json
 import urllib.request
-# change this to the location of your SQLite file
 
 
 #class SurveySubmit(Action):

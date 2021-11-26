@@ -37,14 +37,12 @@ intents:
     use_entities: true
 - what_capacity:
     use_entities: true
-
 entities:
 - email
 - negation
 - model
 - capacity
 - colors
-
 slots:
   email:
     type: rasa.shared.core.slots.TextSlot
@@ -81,7 +79,11 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: false
-  
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - buttons:
@@ -182,7 +184,6 @@ responses:
   - text: Sorry, I can't actually help you order the iphone. Please visit our site to buy some nice phone! I can help you check inventory, see the status of an order or even make a change to that order.
   utter_colors_available:
   - text: the available colors is.
-  
 actions:
 - action_order_status
 - action_survey_submit
@@ -225,13 +226,13 @@ forms:
         type: from_entity
   product_stock_form:
     required_slots:
-      model:
-      - entity: model
-        type: from_entity
       capacity:
       - entity: capacity
         type: from_entity
       colors:
       - entity: colors
+        type: from_entity
+      model:
+      - entity: model
         type: from_entity
 e2e_actions: []

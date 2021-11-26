@@ -111,17 +111,12 @@ rules:
   - active_loop: null
 
 
-# product search
-
-- rule: Activate product stock form
+# product stock search
+- rule: activate product stock form
   steps:
   - intent: product_stock
-  - action: action_deactivate_loop
-  - active_loop: null
-  - action: utter_product_stock_start
   - action: product_stock_form
   - active_loop: product_stock_form
-
 
 - rule: Submit product stock form
   condition:
@@ -129,8 +124,10 @@ rules:
   steps:
   - action: product_stock_form
   - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
   - action: action_product_search
-
+  
 
 
 

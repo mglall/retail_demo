@@ -55,67 +55,67 @@ nlu:
     - [iphone12mini]{"entity": "model", "value": "iPhone12Mini"}
     - [12mini]{"entity": "model", "value": "iPhone12Mini"}
     - [12 mini]{"entity": "model", "value": "iPhone12Mini"}
-    - [SierraBlue]{"entity": "colors", "value": "SierraBlue"}
+    - [SierraBlue](colors)
     - the color im looking for is [sierra blue]{"entity": "colors", "value": "SierraBlue"}
     - [sierrablue]{"entity": "colors", "value": "SierraBlue"}
     - i want [Sierra Blue]{"entity": "colors", "value": "SierraBlue"} color
-    - [Silver]{"entity": "colors", "value": "Silver"} color
+    - [Silver](colors) color
     - [SILVER]{"entity": "colors", "value": "Silver"} color
     - i want [silver]{"entity": "colors", "value": "Silver"}
     - [gold]{"entity": "colors", "value": "Gold"} color
     - [GOLD]{"entity": "colors", "value": "Gold"} color
-    - i want [Gold]{"entity": "colors", "value": "Gold"} color
-    - i need [Graphite]{"entity": "colors", "value": "Graphite"} color
+    - i want [Gold](colors) color
+    - i need [Graphite](colors) color
     - looking for [graphite]{"entity": "colors", "value": "Graphite"} color
     - [graphit]{"entity": "colors", "value": "Graphite"}
-    - looking for [Pink]{"entity": "colors", "value": "Pink"} color
+    - looking for [Pink](colors) color
     - [pink]{"entity": "colors", "value": "Pink"}
     - [pINK]{"entity": "colors", "value": "Pink"}
-    - i want [Midnight]{"entity": "colors", "value": "Midnight"} color
+    - i want [Midnight](colors) color
     - looking for [midnight] {"entity": "colors", "value": "Midnight"} color
     - looking for [mid night] {"entity": "colors", "value": "Midnight"} color
-    - [Red]{"entity": "colors", "value": "Red"} color
+    - [Red](colors) color
     - [red]{"entity": "colors", "value": "Red"} color
     - [RED]{"entity": "colors", "value": "Red"}
     - [blue]{"entity": "colors", "value": "Blue"}
-    - [Blue]{"entity": "colors", "value": "Blue"}
+    - [Blue](colors)
     - [BLUE]{"entity": "colors", "value": "Blue"}
-    - [PacificBlue]{"entity": "colors","value": "PacificBlue"}
-    - i want [pacificblue]{"entity": "colors","value": "PacificBlue"} color
-    - [Pacific Blue]{"entity": "colors","value": "PacificBlue"}
-    - [pacific blue]{"entity": "colors","value": "PacificBlue"}
-    - [Purple]{"entity": "colors","value": "Purple"}
-    - [purple]{"entity": "colors","value": "Purple"}
-    - [purpl]{"entity": "colors","value": "Purple"}
-    - [Green]{"entity": "colors","value": "Green"} color
+    - [PacificBlue](colors)
+    - i want [pacificblue]{"entity": "colors", "value": "PacificBlue"} color
+    - [Pacific Blue]{"entity": "colors", "value": "PacificBlue"}
+    - [pacific blue]{"entity": "colors", "value": "PacificBlue"}
+    - [Purple](colors)
+    - [purple]{"entity": "colors", "value": "Purple"}
+    - [purpl]{"entity": "colors", "value": "Purple"}
+    - [Green](colors) color
     - i want [green] {"entity": "colors","value": "Green"} color
-    - [White]{"entity": "colors","value": "White"} color
+    - [White](colors) color
     - [white] {"entity": "colors","value": "White"} color
-    - [Black]{"entity": "colors","value": "Black"} color
-    - [black]{"entity": "colors","value": "Black"} color
-    - [256GB]{"entity": "capacity", "value": "256GB"}
+    - [Black](colors) color
+    - [black]{"entity": "colors", "value": "Black"} color
+    - [256GB](capacity)
     - [256]{"entity": "capacity", "value": "256GB"}
     - [256 GB]{"entity": "capacity", "value": "256GB"}
     - [256 gb]{"entity": "capacity", "value": "256GB"}
-    - [512GB]{"entity": "capacity", "value": "512GB"}
+    - [512GB](capacity)
     - [512]{"entity": "capacity", "value": "512GB"}
     - [512 GB]{"entity": "capacity", "value": "512GB"}
     - [512 gb]{"entity": "capacity", "value": "512GB"}
-    - [1TB]{"entity": "capacity", "value": "1TB"}
+    - [1TB](capacity)
     - [1 TB]{"entity": "capacity", "value": "1TB"}
     - [1 tb]{"entity": "capacity", "value": "1TB"}
     - [1tb]{"entity": "capacity", "value": "1TB"}
     - [64]{"entity": "capacity", "value": "64GB"}
-    - [64GB]{"entity": "capacity", "value": "64GB"}
+    - [64GB](capacity)
     - [64 GB]{"entity": "capacity", "value": "64GB"}
     - [64gb]{"entity": "capacity", "value": "64GB"}
     - [64 gb]{"entity": "capacity", "value": "64GB"}
-    - [64GB]{"entity": "capacity", "value": "64GB"}
-    - [128GB]{"entity": "capacity", "value": "128GB"}
+    - [128GB](capacity)
     - [128 GB]{"entity": "capacity", "value": "128GB"}
     - [128 gb]{"entity": "capacity", "value": "128GB"}
     - [128gb]{"entity": "capacity", "value": "128GB"}
     - [128]{"entity": "capacity", "value": "128GB"}
+    - [gold]{"entity": "colors", "value": "Gold"}
 - intent: affirm
   examples: |
     - yes
@@ -318,12 +318,12 @@ nlu:
     - do you have iphone
     - i want iphone 7 plus do you have it in the stock
     - can you tell me what product you have right now in the stock
+    - product_stock
 - intent: order_phone
   examples: |
     - i want to buy phone
     - no, don't want to do a return, want to purchase new mobile
     - since they're in stock, how about I place an order
-
 - intent: what_colors
   examples: |
     - what colors do you have for [iPhone 13 Pro Max]{"entity": "model", "value": "iPhone13ProMax"}
@@ -333,12 +333,11 @@ nlu:
     - how many color available for iphone 13 pro
     - do you have silver color for iphone 12 mini
     - what colors
+    - what colors do you have
     - color
     - colors
     - how many colors for this model
     - ok tell me the colors available
-    
-
 - intent: what_capacity
   examples: |
     - how much storage available for iphone 12
@@ -348,9 +347,10 @@ nlu:
     - ok tell me the storage available
     - capacity
     - storage
+    - what storage do you have
+    - what capacity do you have
+    - how much storage have
     - do you have 64 storage for iphone 12 pro max
-
-
 - synonym: iPhone13ProMax
   examples: |
     - iPhone 13 Pro Max
@@ -366,9 +366,103 @@ nlu:
     - iphone12promax
     - 12promax
     - iphone 12 Pro Max
+- synonym: iPhone13Pro
+  examples: |
+    - iphone 13 Pro
+    - iphone13pro
+    - iphone 13 pro
+    - 13 pro
+    - 13pro
+- synonym: iPhone13
+  examples: |
+    - iphone 13
+    - iphone13
+    - 13
+- synonym: iPhone13mini
+  examples: |
+    - iphone 13 mini
+    - 13 mini
+    - 13mini
+- synonym: iPhone12Pro
+  examples: |
+    - iphone 12 pro
+    - iphone 12 Pro
+    - 12 pro
+    - 12pro
+    - 12PRO
+- synonym: iPhone12
+  examples: |
+    - iphone 12
+    - iphone12
+    - 12
+- synonym: iPhone12Mini
+  examples: |
+    - iphone 12 mini
+    - iphone12mini
+    - 12mini
+    - 12 mini
+- synonym: SierraBlue
+  examples: |
+    - sierra blue
+    - sierrablue
+    - Sierra Blue
+- synonym: Silver
+  examples: |
+    - SILVER
+    - silver
 - synonym: Gold
   examples: |
     - gold
+    - GOLD
+- synonym: Graphite
+  examples: |
+    - graphite
+    - graphit
+- synonym: Pink
+  examples: |
+    - pink
+    - pINK
+- synonym: Red
+  examples: |
+    - red
+    - RED
+- synonym: Blue
+  examples: |
+    - blue
+    - BLUE
+- synonym: PacificBlue
+  examples: |
+    - pacificblue
+    - Pacific Blue
+    - pacific blue
+- synonym: Purple
+  examples: |
+    - purple
+    - purpl
+- synonym: Black
+  examples: |
+    - black
+- synonym: 256GB
+  examples: |
+    - 256
+    - 256 GB
+    - 256 gb
+- synonym: 512GB
+  examples: |
+    - 512
+    - 512 GB
+    - 512 gb
+- synonym: 1TB
+  examples: |
+    - 1 TB
+    - 1 tb
+    - 1tb
+- synonym: 64GB
+  examples: |
+    - 64
+    - 64 GB
+    - 64gb
+    - 64 gb
 - synonym: 128GB
   examples: |
     - 128 GB
